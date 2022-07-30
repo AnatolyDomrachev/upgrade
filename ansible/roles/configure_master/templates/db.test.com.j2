@@ -1,0 +1,14 @@
+$TTL	{{ TTL }}
+@	IN	SOA	localhost. root.localhost. (
+			{{ Serial }}		; Serial
+			 {{ Refresh }}		; Refresh
+			  {{ Retry }}		; Retry
+			{{ Expire }}		; Expire
+			 {{ TTL }} )	; Negative Cache TTL
+;
+@	IN	NS	localhost.
+
+{% for item in nodes %}
+{{ item.name }}   IN  	A	{{ item.ip }}
+{% endfor %}
+

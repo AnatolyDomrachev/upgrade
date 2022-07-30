@@ -1,0 +1,9 @@
+zone "test.com" {
+	type master;
+	file "/etc/bind/db.test.com";
+	allow-update { none; }; 
+	allow-transfer  { {{ dns_slave }}; }; 
+	also-notify { {{ dns_slave }}; }; 
+};
+
+

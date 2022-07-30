@@ -1,0 +1,28 @@
+---
+- name : Install bind9
+  hosts : all
+  gather_facts : false
+  become : true
+  roles : 
+    - install_bind9
+  tags : 
+    - install_bind9
+
+- name : Configure master
+  hosts : dns_master
+  gather_facts : false
+  become : true
+  roles : 
+    - configure_master
+  tags : 
+    - configure_master
+
+- name : Configure slave
+  hosts : dns_slave
+  gather_facts : false
+  become : true
+  roles : 
+    - configure_slave
+  tags : 
+    - configure_slave
+

@@ -1,0 +1,9 @@
+[dns_master]
+192.168.8.213
+
+[dns_slave]
+192.168.8.214
+
+[all:vars]
+dns_master=192.168.8.213
+dns_slave=192.168.8.214

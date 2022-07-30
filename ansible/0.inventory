@@ -1,0 +1,13 @@
+[dns_master]
+192.168.8.203
+
+[dns_master:vars]
+dns_slave=192.168.8.204
+name=ns1
+
+[dns_slave]
+192.168.8.204
+
+[dns_slave:vars]
+dns_master=192.168.8.203
+name=ns2

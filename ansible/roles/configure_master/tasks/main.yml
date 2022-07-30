@@ -1,0 +1,22 @@
+---
+- name: Template named.conf.local
+  template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - restart bind9
+
+- name: Template db.test.com
+  template:
+    src: db.test.com.j2
+    dest: /etc/bind/db.test.com
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - restart bind9
+
+

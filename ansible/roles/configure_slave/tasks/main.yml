@@ -1,0 +1,10 @@
+---
+- name: Template named.conf.local
+  template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+    owner: root
+    group: root
+    mode: '0644'
+  notify:
+    - restart bind9

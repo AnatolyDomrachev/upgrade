@@ -1,0 +1,6 @@
+TTL: 604800
+Serial: 3
+Refresh: 604800
+Retry: 86400
+Expire: 2419200
+
