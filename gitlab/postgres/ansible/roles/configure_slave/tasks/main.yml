@@ -1,0 +1,14 @@
+---
+- name: Template named.conf.local
+  template:
+    src: named.conf.local.j2
+    dest: /etc/bind/named.conf.local
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Restart service bind9
+  ansible.builtin.systemd:
+    state: restarted
+    name: bind9
+

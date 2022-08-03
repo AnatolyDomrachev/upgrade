@@ -1,0 +1,9 @@
+---
+- name : Configure pg_hba.conf
+  hosts : postgres
+  gather_facts : false
+  become : true
+  roles : 
+    - configure_postgres
+  tags : 
+    - configure_postgres

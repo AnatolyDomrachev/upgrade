@@ -1,0 +1,15 @@
+stages:
+  - create pg_hba.conf
+  - put pg_hba.conf
+
+create pg_hba.conf:
+  stage: create pg_hba.conf
+  script: python3 parse.py > ansible/roles/configure_postgres/templates/pg_hba.conf
+  artifacts:
+      paths:
+        - ansible/roles/configure_postgres/templates/pg_hba.conf 
+
+put pg_hba.conf:
+  stage: put pg_hba.conf
+  script: ansible-playbook -i ansible/inventory ansible/postgres_hba.yaml 
+

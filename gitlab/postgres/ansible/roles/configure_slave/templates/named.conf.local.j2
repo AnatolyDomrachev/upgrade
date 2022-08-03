@@ -1,0 +1,6 @@
+zone "test.com" {
+	type slave; 
+	file "/etc/bind/db.test.com";
+	masters { {{ dns_master }}; }; 
+
+};

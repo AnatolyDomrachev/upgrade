@@ -1,0 +1,32 @@
+local:
+  all:
+    - postgres
+    - all
+  replication:
+    - all
+
+host:
+  all:
+    all:
+      - 127.0.0.1/32
+  replication:
+    all:
+      - 127.0.0.1/32
+      - ::1/128
+  market_csgo:
+    market_csgo_root:
+       - 192.168.1.102/32 #developer
+       - 37.192.184.99/32 #developer_Novosibirsk
+    shaff29:
+      - 192.168.1.110/32 #Irina
+      - 192.168.1.102/32 #Irina
+  kakebo_test:
+    market_csgo_root:
+       - 192.168.1.102/32 #developer
+    shaff29:
+      - 192.168.1.110/32 #Irina
+    kakebo_da:
+      - 192.168.1.102/32 #DataBaseAdapter
+      - 192.168.1.254/32 #DataBaseAdapter; host dev network
+
+
